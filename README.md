@@ -23,49 +23,44 @@ Repo includes:
   * enter rows of X coordinate, Z coordinate, heading and click Submit button
   * will plot the rays, least-sqaures solution, and text annotation of the solution coordinates
 
-```R
-library(tidyverse)
-library(corpcor) # for pseudo-inverse
+```python
+import numpy as np
+import pandas as pd
 
-df <- tribble( # data frame of origin points and Minecraft 'heading'
-    ~x, ~z, ~heading,
-    96, 298, 35.8,
-    -304, 127, 20.2,
-    -281, 1844, 109.4
-  ) %>%
-  mutate(
-    radians = pi * heading / 180.0,
-    unit_x = -sin(radians),
-    unit_z = cos(radians)
-  )
+# Create DataFrame
+df = pd.DataFrame({
+    'x': [96, -304, -281],
+    'z': [298, 127, 1844],
+    'heading': [35.8, 20.2, 109.4]
+})
 
-# Determine the 'best' point for the intersection of the lines,
-# by minimizing the perpendicular distances of the point to the lines
-#
-# From: "Least-Squares Intersection of Lines, by Johannes Traa - UIUC 2013"
-# - http://cal.cs.illinois.edu/~johannes/research/LS_line_intersect.pdf (link broken as of 2020-04)
+# Convert degrees to radians and calculate unit vectors
+df['radians'] = np.radians(df['heading'])
+df['unit_x'] = -np.sin(df['radians'])
+df['unit_z'] = np.cos(df['radians'])
 
-k <- nrow(df) # number of lines
-dimension <- 2
-a <- df[, 1:2] %>% as.matrix() %>% t() # *columns* of origin points
-n <- df[, 5:6] %>% as.matrix() %>% t() # *columns* of the points' unit direction vectors
-R = matrix(data = 0, nrow = dimension, ncol = dimension) # initialize an empty matrix
-q = vector(mode = 'numeric', length = dimension) # initialize an empty vector
+# Number of lines and dimension
+k = df.shape[0]
+dimension = 2
 
-# Generating a system of linear equations, with Rp = q, where p will be the 'best' point
-for (i in 1:k) {
-  R <- R + (diag(dimension) - n[, i] %*% t(n[, i]))
-  q <- q + (diag(dimension) - n[, i] %*% t(n[, i])) %*% a[, i]
-}
-# So p_hat = pseudoinverse(R) x q
-p_hat <- pseudoinverse(R) %*% q # column vector of the least squares fit best point
+# Extract matrices a and n
+a = df[['x', 'z']].values.T
+n = df[['unit_x', 'unit_z']].values.T
 
-# Turn solution into proper data frame to plot optimal point
-df_p <- t(p_hat) %>% data.frame # need to convert it to a row vector for data frame
-names(df_p) <- c('x', 'z') # and match the column names to plot
+# Initialize matrices R and q
+R = np.zeros((dimension, dimension))
+q = np.zeros(dimension)
 
-df_p
+# Generating a system of linear equations, with Rp = q
+for i in range(k):
+    R += np.eye(dimension) - np.outer(n[:, i], n[:, i].T)
+    q += (np.eye(dimension) - np.outer(n[:, i], n[:, i].T)) @ a[:, i]
 
-#           x        z
-#   -864.3211 1637.285
+# Calculate the least squares fit best point
+p_hat = np.linalg.pinv(R) @ q
+
+# Convert the solution to a DataFrame for plotting
+df_p = pd.DataFrame(p_hat.reshape(1, -1), columns=['x', 'z'])
+
+print(df_p)
 ```
