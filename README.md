@@ -1,5 +1,7 @@
 # minecraft_stronghold
 
+![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/e8b9cbea-39d2-40a0-b85f-1de40c8c7c0e)
+
 Locate Minecraft stronghold from Eye of Ender throws by least-square intersection of lines
 
 Repo includes:
