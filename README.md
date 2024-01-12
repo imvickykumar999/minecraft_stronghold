@@ -1,4 +1,4 @@
-# `Minecraft stronghold`
+# [`Minecraft stronghold`](https://imvickykumar999.github.io/minecraft_stronghold/)
 
 <tr>
 <td>Facing <i>direction</i> (Towards <i>axis</i>) (<strong>yaw</strong>/<strong>pitch</strong>)
@@ -7,6 +7,7 @@
 <br><br>
 <ul><li><i>direction</i> is the cardinal direction the player is facing;</li>
 <li><i>axis</i> is the horizontal axis and the direction along this axis that the player is tooking towards ("negative Z", "positive Z", "negative X", or "positive X");</li>
+<br>
 <li><i>yaw</i> is the player's <a href="https://en.wikipedia.org/wiki/Aircraft_principal_axes#Vertical_axis_(yaw)" class="extiw" title="wikipedia:Aircraft principal axes">yaw</a>, 0 meaning facing South (positive is to the West, negative is to the East);</li>
 <li><i>pitch</i> is the player's <a href="https://en.wikipedia.org/wiki/Aircraft_principal_axes#Transverse_axis_(pitch)" class="extiw" title="wikipedia:Aircraft principal axes">pitch</a>, 0 meaning looking horizontally (positive is down, negative is up).</li></ul>
 </td>
