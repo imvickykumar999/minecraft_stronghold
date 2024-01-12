@@ -44,6 +44,7 @@
 
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/e8b9cbea-39d2-40a0-b85f-1de40c8c7c0e)
 
+<!--
     Repo includes:
 
 * stronghold.R
@@ -56,43 +57,13 @@
   * can open app.R in RStudio and then Run App for interactive use
   * enter rows of X coordinate, Z coordinate, heading and click Submit button
   * will plot the rays, least-sqaures solution, and text annotation of the solution coordinates
+-->
 
-
-## Use [vixtor.py](https://github.com/imvickykumar999/100th-Repository-First-Milestones/blob/main/PYPI%20python%20package/multivicks/vixtor.py#L108) to implement same.
+## Use [`vixtor.py`](https://github.com/imvickykumar999/100th-Repository-First-Milestones/blob/main/PYPI%20python%20package/multivicks/vixtor.py#L108) to implement same.
 
 ```python
 import numpy as np
 import pandas as pd
-
-def convert_minecraft_yaw_pitch_to_numpy(yaw, pitch):
-  """Converts Minecraft yaw and pitch to a numpy array.
-
-  Args:
-    yaw: The Minecraft yaw angle in degrees.
-    pitch: The Minecraft pitch angle in degrees.
-
-  Returns:
-    A numpy array containing the yaw and pitch angles in radians.
-  """
-
-  yaw = yaw * np.pi / 180.0
-  pitch = pitch * np.pi / 180.0
-  return np.array([yaw, pitch])
-
-def convert_numpy_yaw_pitch_to_minecraft(yaw, pitch):
-  """Converts numpy yaw and pitch to Minecraft angles.
-
-  Args:
-    yaw: The numpy yaw angle in radians.
-    pitch: The numpy pitch angle in radians.
-
-  Returns:
-    A tuple containing the yaw and pitch angles in degrees.
-  """
-
-  yaw = yaw * 180.0 / np.pi
-  pitch = pitch * 180.0 / np.pi
-  return yaw, pitch
 
 # Create DataFrame
 df = pd.DataFrame({
@@ -130,4 +101,66 @@ p_hat = np.linalg.pinv(R) @ q
 df_p = pd.DataFrame(p_hat.reshape(1, -1), columns=['x', 'z'])
 
 print(df_p)
+```
+
+## `Reading` `X, Y, Z`, `Roll, Yaw and Pitch`
+    
+```python
+import mcpi.minecraft as minecraft
+mc = minecraft.Minecraft.create()
+
+# Get the player's position
+pos = mc.player.getTilePos()
+
+# Print the player's x,y,z
+print("X:", pos.x)
+print("Y:", pos.y)
+print("Z:", pos.z)
+
+# Get the player's rotation
+rot = mc.player.getRotation()
+
+# Print the player's roll, yaw and pitch
+print("Roll:", rot.roll)
+print("Yaw:", rot.yaw)
+print("Pitch:", rot.pitch)
+
+# We need only X, Z, and Yaw
+print(pos.x, pos.z, rot.yaw)
+```
+
+## `Minecraft` uses angle as `Degree`, while `Numpy` uses it as `Radian`
+
+```python
+import numpy as np
+
+def convert_minecraft_yaw_pitch_to_numpy(yaw, pitch):
+  """Converts Minecraft yaw and pitch to a numpy array.
+
+  Args:
+    yaw: The Minecraft yaw angle in degrees.
+    pitch: The Minecraft pitch angle in degrees.
+
+  Returns:
+    A numpy array containing the yaw and pitch angles in radians.
+  """
+
+  yaw = yaw * np.pi / 180.0
+  pitch = pitch * np.pi / 180.0
+  return np.array([yaw, pitch])
+
+def convert_numpy_yaw_pitch_to_minecraft(yaw, pitch):
+  """Converts numpy yaw and pitch to Minecraft angles.
+
+  Args:
+    yaw: The numpy yaw angle in radians.
+    pitch: The numpy pitch angle in radians.
+
+  Returns:
+    A tuple containing the yaw and pitch angles in degrees.
+  """
+
+  yaw = yaw * 180.0 / np.pi
+  pitch = pitch * 180.0 / np.pi
+  return yaw, pitch
 ```
