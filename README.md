@@ -19,13 +19,11 @@
 <td>Roll</td>
 <td>Pitch</td>
 <td>Yaw</td>
-<td>Compass</td>
 </tr>
 <tr>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Aileron_roll.gif/223px-Aileron_roll.gif" alt="3" height = 200px></td>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aileron_pitch.gif/224px-Aileron_pitch.gif" alt="3" height = 200px></td>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Aileron_yaw.gif/225px-Aileron_yaw.gif" alt="3" height = 200px></td>
-<td><img src="https://images.squarespace-cdn.com/content/v1/5cf802d43f545c00018b0403/1562350426653-0S07VHOQOT2BOJ4MYDHR/compass.png" alt="3" height = 200px></td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Aileron_roll.gif/223px-Aileron_roll.gif" alt="3" height = '100%'></td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aileron_pitch.gif/224px-Aileron_pitch.gif" alt="3" height = '100%'></td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Aileron_yaw.gif/225px-Aileron_yaw.gif" alt="3" height = '100%'></td>
 </tr>
 </table>
 <br>
