@@ -9,8 +9,25 @@
 <li><i>yaw</i> is the player's <a href="https://en.wikipedia.org/wiki/Aircraft_principal_axes" class="extiw" title="wikipedia:Aircraft principal axes">yaw</a>, 0 meaning facing South (positive is to the West, negative is to the East);</li>
 <li><i>pitch</i> is the player's <a href="https://en.wikipedia.org/wiki/Aircraft_principal_axes" class="extiw" title="wikipedia:Aircraft principal axes">pitch</a>, 0 meaning looking horizontally (positive is down, negative is up).</li></ul>
 </td>
-</tr><br>
+</tr>
 
+<br>
+<table>
+<tr>
+<td>Roll</td>
+<td>Pitch</td>
+<td>Yaw</td>
+</tr>
+<tr>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Aileron_roll.gif/223px-Aileron_roll.gif" alt="3" width = '100%'></td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aileron_pitch.gif/224px-Aileron_pitch.gif" alt="3" width = '100%'></td>
+<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Aileron_yaw.gif/225px-Aileron_yaw.gif" alt="3" width = '100%'></td>
+</tr>
+</table>
+<br>
+
+    Locate Minecraft stronghold from Eye of Ender throws
+    
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/bf7dc07b-e7c7-46e3-9952-cada71fe6449)
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/47b0a8f3-fe00-454b-92af-3990a5e9afed)
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/320527c8-1802-4115-950a-09c80da36f29)
