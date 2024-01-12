@@ -64,6 +64,36 @@
 import numpy as np
 import pandas as pd
 
+def convert_minecraft_yaw_pitch_to_numpy(yaw, pitch):
+  """Converts Minecraft yaw and pitch to a numpy array.
+
+  Args:
+    yaw: The Minecraft yaw angle in degrees.
+    pitch: The Minecraft pitch angle in degrees.
+
+  Returns:
+    A numpy array containing the yaw and pitch angles in radians.
+  """
+
+  yaw = yaw * np.pi / 180.0
+  pitch = pitch * np.pi / 180.0
+  return np.array([yaw, pitch])
+
+def convert_numpy_yaw_pitch_to_minecraft(yaw, pitch):
+  """Converts numpy yaw and pitch to Minecraft angles.
+
+  Args:
+    yaw: The numpy yaw angle in radians.
+    pitch: The numpy pitch angle in radians.
+
+  Returns:
+    A tuple containing the yaw and pitch angles in degrees.
+  """
+
+  yaw = yaw * 180.0 / np.pi
+  pitch = pitch * 180.0 / np.pi
+  return yaw, pitch
+
 # Create DataFrame
 df = pd.DataFrame({
     'x': [96, -304, -281],
