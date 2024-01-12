@@ -59,7 +59,7 @@
   * will plot the rays, least-sqaures solution, and text annotation of the solution coordinates
 -->
 
-## Use [`vixtor.py`](https://github.com/imvickykumar999/100th-Repository-First-Milestones/blob/main/PYPI%20python%20package/multivicks/vixtor.py#L108) to implement same.
+## Implement using 3D [`vixtor.py`](https://github.com/imvickykumar999/100th-Repository-First-Milestones/blob/main/PYPI%20python%20package/multivicks/vixtor.py#L108) python library.
 
 ```python
 import numpy as np
@@ -103,7 +103,7 @@ df_p = pd.DataFrame(p_hat.reshape(1, -1), columns=['x', 'z'])
 print(df_p)
 ```
 
-## `Reading` `X, Y, Z`, `Roll, Yaw and Pitch`
+## `Reading` `X, Y, Z`, `Roll`, `Yaw` ***and*** `Pitch`.
     
 ```python
 import mcpi.minecraft as minecraft
@@ -129,12 +129,12 @@ print("Pitch:", rot.pitch)
 print(pos.x, pos.z, rot.yaw)
 ```
 
-## `Minecraft` uses angle as `Degree`, while `Numpy` uses it as `Radian`
+### `Minecraft` uses angle as `Degree`, while `Numpy` uses it as `Radian`.
 
 ```python
 import numpy as np
 
-def convert_minecraft_yaw_pitch_to_numpy(yaw, pitch):
+def convert_minecraft_to_numpy(yaw, pitch):
   """Converts Minecraft yaw and pitch to a numpy array.
 
   Args:
@@ -149,7 +149,7 @@ def convert_minecraft_yaw_pitch_to_numpy(yaw, pitch):
   pitch = pitch * np.pi / 180.0
   return np.array([yaw, pitch])
 
-def convert_numpy_yaw_pitch_to_minecraft(yaw, pitch):
+def convert_numpy_to_minecraft(yaw, pitch):
   """Converts numpy yaw and pitch to Minecraft angles.
 
   Args:
