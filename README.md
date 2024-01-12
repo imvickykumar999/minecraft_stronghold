@@ -35,6 +35,10 @@
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/bf7dc07b-e7c7-46e3-9952-cada71fe6449)
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/47b0a8f3-fe00-454b-92af-3990a5e9afed)
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/320527c8-1802-4115-950a-09c80da36f29)
+
+    Eye of Ender Throws: (X, Z, Yaw)
+    Yaw is Direction in XZ plane.
+
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/861c3aa4-083b-469e-a777-587bf5931fe8)
 ![image](https://github.com/imvickykumar999/minecraft_stronghold/assets/50515418/9e48647a-1325-40f3-b8de-b5f2ea556b8c)
 
